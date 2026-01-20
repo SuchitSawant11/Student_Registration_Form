@@ -4,22 +4,26 @@
     <title>Registration Details</title>
 </head>
 <body>
+<form action="index.html">
+        <h2>Student Registration Details</h2>
 
-<h2>Student Registration Details</h2>
+    <p><b>Name:</b> <span id="name"></span></p>
+    <p><b>Roll Number:</b> <span id="roll"></span></p>
+    <p><b>Email:</b> <span id="email"></span></p>
+    <p><b>Course:</b> <span id="course"></span></p>
 
-<p><b>Name:</b> <span id="name"></span></p>
-<p><b>Roll Number:</b> <span id="roll"></span></p>
-<p><b>Email:</b> <span id="email"></span></p>
-<p><b>Course:</b> <span id="course"></span></p>
+    <script>
+        const params = new URLSearchParams(window.location.search);
 
-<script>
-    const params = new URLSearchParams(window.location.search);
+        document.getElementById("name").textContent = params.get("name");
+        document.getElementById("roll").textContent = params.get("roll");
+        document.getElementById("email").textContent = params.get("email");
+        document.getElementById("course").textContent = params.get("course");
+    </script>
 
-    document.getElementById("name").textContent = params.get("name");
-    document.getElementById("roll").textContent = params.get("roll");
-    document.getElementById("email").textContent = params.get("email");
-    document.getElementById("course").textContent = params.get("course");
-</script>
+    <input type="submit" value="Logout">
+</form>
+
 
 </body>
 </html>
